@@ -1,3 +1,12 @@
+This is an updated version including customization for the native PRNU extractor
+Green channel PRNU extractor (G-PRNU)
+Customization for different sizes and interpolation methods
+Implementation of Li's PRNU enhancement
+- REEPJYOTI DEKA
+  Eurecom,
+  deka@eurecom.fr
+
+
 Matlab Implementation of the Lucas etc al. (2006) algorithm for source camera identification using the PRNU signature of a digital image sensor
 
 Reference:
