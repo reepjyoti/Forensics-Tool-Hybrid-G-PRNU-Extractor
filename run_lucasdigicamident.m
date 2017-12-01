@@ -95,7 +95,7 @@ case 'reference'
                             % 'singlePRNU' : compute an individual PRNU pattern (noise residual) for each image
 pmode = 'averagePRNU';
 
-inPath = '/cluster/deka/VISION/D08_Samsung_GalaxyTab3/i9';      % folder containing input images
+inPath = '/cluster/deka/VISION/D07_Lenovo_P70A/12';      % folder containing input images
 
 outPath = '/cluster/deka/VISION/References';      % This is where the prnu reference data are saved (.mat file)
 
@@ -104,12 +104,12 @@ outPath = '/cluster/deka/VISION/References';      % This is where the prnu refer
 % line 62 in lucasdigicamident.m 
 % line 49 in denoiseImages.m 
 greenPrnu = 1;           % (0) if normal PRNU required. (1) if G-PRNU required. Currently done only for mihcak.
-gprnu_size = 640;         %  size of the extracted G-PRNU (in px). default 0 to get un-resized GPRNU
+gprnu_size = 7201280;         %  size of the extracted G-PRNU (in px). default 0 to get un-resized GPRNU
                          %  Give interpolation method in the next line if gprnu_size > 0
                          %   ,num2str(gprnu_size),
 interpolation_method = 'nearest';
 
-cameraID = strcat('D08_v_',num2str(gprnu_size),'_',interpolation_method);  % Identifier for camera make/model
+cameraID = strcat('D07_',num2str(gprnu_size),'_',interpolation_method);  % Identifier for camera make/model
 
 imageType = 'NI';         % Specify argument as FF for flat-field and NI for natural image
 
