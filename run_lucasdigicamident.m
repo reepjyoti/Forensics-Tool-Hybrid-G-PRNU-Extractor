@@ -95,21 +95,21 @@ case 'reference'
                             % 'singlePRNU' : compute an individual PRNU pattern (noise residual) for each image
 pmode = 'averagePRNU';
 
-inPath = 'D:\Eurecom 2016-18\Summer Project 2017\work\img-vid\media\huawei-p10_plus\videos\iframes\30';      % folder containing input images
+inPath = '/cluster/deka/VISION/D08_Samsung_GalaxyTab3/i9';      % folder containing input images
 
-outPath = 'D:\Eurecom 2016-18\Summer Project 2017\work\img-vid\media\ref';      % This is where the prnu reference data are saved (.mat file)
+outPath = '/cluster/deka/VISION/References';      % This is where the prnu reference data are saved (.mat file)
 
 
 % If G-PRNU required, update the following lines as well:
-% line 49 in lucasdigicamident.m 
-% line 39 in denoiseImages.m 
+% line 62 in lucasdigicamident.m 
+% line 49 in denoiseImages.m 
 greenPrnu = 1;           % (0) if normal PRNU required. (1) if G-PRNU required. Currently done only for mihcak.
 gprnu_size = 640;         %  size of the extracted G-PRNU (in px). default 0 to get un-resized GPRNU
                          %  Give interpolation method in the next line if gprnu_size > 0
                          %   ,num2str(gprnu_size),
-interpolation_method = 'bilinear';
+interpolation_method = 'nearest';
 
-cameraID = strcat('huawei-p10_plus_30_',num2str(gprnu_size),'_bl');  % Identifier for camera make/model
+cameraID = strcat('D08_v_',num2str(gprnu_size),'_',interpolation_method);  % Identifier for camera make/model
 
 imageType = 'NI';         % Specify argument as FF for flat-field and NI for natural image
 
@@ -132,7 +132,7 @@ overwrite = 1;          % (0) use existing denoised images; (1) Overwrite existi
 
 % Search for jpeg and png files
 if (~exist('iList') == 1)
-    fileData = rdir([inPath, '\*.*'], 'regexp(name, [''.png'' ''|'' ''.jpg''], ''ignorecase'')', true);
+    fileData = rdir([inPath, '/*.*'], 'regexp(name, [''.bmp'' ''|'' ''.jpg''], ''ignorecase'')', true);
     iList = {fileData.name};
 end
 
@@ -150,7 +150,7 @@ switch pmode
         end
 end
 
-denoiseFolderRoot = [inPath '\denoise'];
+denoiseFolderRoot = [inPath '/denoise'];
 
 addargs.filterName = denoiseFilter;
 switch denoiseFilter
@@ -176,7 +176,7 @@ switch denoiseFilter
         if ~wavInst
             fprintf('Warning: Mihcak filter selected but Wavelet Toolbox is not available.\n');
         end
-        addargs.denoiseFolder = [denoiseFolderRoot '\mihcak'];     % Folder to save denoised images
+        addargs.denoiseFolder = [denoiseFolderRoot '/mihcak'];     % Folder to save denoised images
         addargs.sigma0 = 5;     % value of sigma0
         addargs.overwrite = overwrite;
         addargs.saveWaveletCoeffs = saveWaveletCoeffs;      % Save wavelet coefficients as a .mat file
@@ -249,9 +249,9 @@ case 'correlate'
 gprnu_size = 0;           % (0) initialising variable. 
 
     
-inPath = 'D:\Eurecom 2016-18\Summer Project 2017\work\img-vid\media\ref';
+inPath = 'E:\Reep\PRNU\VISION\D03_Huawei_P9\flat';
 
-outPath = 'D:\Eurecom 2016-18\Summer Project 2017\work\img-vid\media\ref';      % This is where the correlation results file is written
+outPath = 'E:\Reep\PRNU\VISION\References';      % This is where the correlation results file is written
 
 % If correlating a reference frame with a SINGLE noise residual:
 %    1) Comment out rListFile
@@ -275,8 +275,8 @@ outPath = 'D:\Eurecom 2016-18\Summer Project 2017\work\img-vid\media\ref';      
 size= 640 ;% size of GPRNU
 interpolation_method= 'nn' ; % interpolation_method (bc,bl,nn)
 
-imageRef = strcat('huawei_p10plus_img',num2str(size),'_',interpolation_method,'_NI_AVE_M_L.mat')
-vidRef = strcat('samsung-s8_v_1-19_',num2str(size),'_',interpolation_method,'_NI_AVE_M_L.mat')
+imageRef = strcat('D03',num2str(size),'_',interpolation_method,'_NI_AVE_M_L.mat')
+vidRef = strcat('D03',num2str(size),'_',interpolation_method,'_NI_AVE_M_L.mat')
 
 refFileNames = {imageRef, vidRef}; % This is ignored if rListFile above is defined
 
