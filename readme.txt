@@ -1,31 +1,12 @@
-This is an updated version including customization for the native PRNU extractor by Muammar based on the work by Lukas, Fridrich and Goljan.
-
-Green channel PRNU extractor (G-PRNU)
+This is an updated Updated PRNU extractor (Lucas et al) based on the work of Muammar including customization for the native PRNU extractor
+Green channel PRNU extractor is being implemented along with 
 Customization for different sizes and interpolation methods
-Implementation of Li's PRNU enhancement
+Also additionally, Li's PRNU enhancement is implemented. If enhnacement required uncomment 132-138 lines in lucasdigicamident.m
 
-If G-PRNU required, update the following lines as well:
-line 49 in lucasdigicamident.m 
-line 39 in denoiseImages.m 
-line 103-110 in run_lucasdigicamident.m  
-For correlation: line 275,276 in run_lucasdigicamident.m  
-size= 640 ;% size of GPRNU
-interpolation_method= 'nn' ; % interpolation_method (bc,bl,nn)
+ - REEPJYOTI DEKA
+   Eurecom,
+   deka@eurecom.fr
 
-greenPrnu = 1;           % (0) if normal PRNU required. (1) if G-PRNU required. Currently done only for mihcak.
-gprnu_size = 640;         %  size of the extracted G-PRNU (in px). default 0 to get un-resized GPRNU
-                         %  Give interpolation method in the next line if gprnu_size > 0
-                         %   ,num2str(gprnu_size),
-interpolation_method = 'bilinear'
-
-size= 640 ;% size of GPRNU
-interpolation_method= 'nn' ; % interpolation_method (bc,bl,nn)
-
-
-
-- REEPJYOTI DEKA
-  Eurecom,
-  deka@eurecom.fr
 
 
 Matlab Implementation of the Lucas etc al. (2006) algorithm for source camera identification using the PRNU signature of a digital image sensor
@@ -114,3 +95,8 @@ Create a new file in Notepad++ and copy the name of the reference PRNU frame fil
 Now copy the list of noise residual file names from the file listing, but this time do it in block edit mode. Delete the name of the reference PRNU file and any other files from the file listing. Then copy in block mode the noise residual file names. This is done by pressing ALT+SHFT+Cursor keys (or ALT+SHFT+ Mouse select) when selecting the noise residual file names. Copy the file names to the clipboard by pressing CTRL+C. Move to the panel containing the new file and position the cursor to the right of the first entry and press CTRL+V. This will copy the noise residual names in block edit mode.
 
 Finally, save the newly created file to disk. Call it something like correlation-listing.txt.
+
+
+Hani Muammar
+December 2014
+hkmuammar@gmail.com
