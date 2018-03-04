@@ -19,7 +19,7 @@ This is an updated Updated PRNU extractor (Lucas et al) based on the work of Mua
 - If the Mihcak algorithm for image denoising will be used then the Matlab Wavelets Toolbox is required.
 - If the BM3D denoising algorithm will be used, then the BM3D package is needed. This can be downloaded from: http://www.cs.tut.fi/~foi/GCF-BM3D/
 
-Reference:
+##### References:
 
 Lukas, J., Fridrich, J. & Goljan, M. "Digital camera identification from sensor pattern noise." IEEE Transactions on Information Forensics and Security, 2006, 1, 205 - 214 
 
