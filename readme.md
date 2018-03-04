@@ -3,7 +3,7 @@ This is an updated Updated PRNU extractor (Lucas et al) based on the work of Mua
 + Customization for different sizes and interpolation methods
 + Li's PRNU enhancement is implemented. If enhancement required uncomment 132-138 lines in lucasdigicamident.m
 
- - REEPJYOTI DEKA
+-- REEPJYOTI DEKA
    Eurecom,
    deka@eurecom.fr
 
