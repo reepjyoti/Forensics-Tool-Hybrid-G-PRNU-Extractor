@@ -1,7 +1,7 @@
 This is an updated Updated PRNU extractor (Lucas et al) based on the work of Muammar including customization for the native PRNU extractor
-Green channel PRNU extractor is being implemented along with 
-Customization for different sizes and interpolation methods
-Also additionally, Li's PRNU enhancement is implemented. If enhnacement required uncomment 132-138 lines in lucasdigicamident.m
++ Green channel PRNU extractor is being implemented along with 
++ Customization for different sizes and interpolation methods
++ Li's PRNU enhancement is implemented. If enhancement required uncomment 132-138 lines in lucasdigicamident.m
 
  - REEPJYOTI DEKA
    Eurecom,
