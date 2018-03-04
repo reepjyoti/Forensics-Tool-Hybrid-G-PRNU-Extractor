@@ -2,7 +2,7 @@
 This is an updated Updated PRNU extractor (Lucas et al) based on the work of Muammar including customization for the native PRNU extractor
 + G-PRNU extractor along with native PRNU is being implemented along with 
 + Customization for different sizes and interpolation methods
-+ Li's PRNU enhancement is implemented. If enhancement required uncomment 132-138 lines in lucasdigicamident.m
++ Li's enhancement technique. (If enhancement required uncomment 132-138 lines in lucasdigicamident.m)
 + Available filters: 
 	- gaussian 
 	- mihcak 
