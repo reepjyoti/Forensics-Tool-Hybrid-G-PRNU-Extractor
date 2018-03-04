@@ -1,29 +1,34 @@
+### Forensics-Tool-Hybrid-G-PRNU-Extractor
 This is an updated Updated PRNU extractor (Lucas et al) based on the work of Muammar including customization for the native PRNU extractor
-+ Green channel PRNU extractor is being implemented along with 
++ G-PRNU extractor along with native PRNU is being implemented along with 
 + Customization for different sizes and interpolation methods
 + Li's PRNU enhancement is implemented. If enhancement required uncomment 132-138 lines in lucasdigicamident.m
++ Available filters: 
+	- gaussian 
+	- mihcak 
+	- sigma 
+	- bm3d
 
--- REEPJYOTI DEKA
+-- REEPJYOTI DEKA,
    Eurecom,
    deka@eurecom.fr
-
-
-
-Matlab Implementation of the Lucas etc al. (2006) algorithm for source camera identification using the PRNU signature of a digital image sensor
-
-Reference:
-
-Lukas, J., Fridrich, J. & Goljan, M. "Digital camera identification from sensor pattern noise." IEEE Transactions on Information Forensics and Security, 2006, 1, 205 - 214 
-
-Prerequisites:
+   
+##### Prerequisites:
 
 - The Image Processing Toolbox is required.
 - If the Mihcak algorithm for image denoising will be used then the Matlab Wavelets Toolbox is required.
 - If the BM3D denoising algorithm will be used, then the BM3D package is needed. This can be downloaded from: http://www.cs.tut.fi/~foi/GCF-BM3D/
 
+Reference:
+
+Lukas, J., Fridrich, J. & Goljan, M. "Digital camera identification from sensor pattern noise." IEEE Transactions on Information Forensics and Security, 2006, 1, 205 - 214 
+
+Muammar, Hani. Source Camera Identification Using Image Sensor PRNU Pattern. London: Communications And Signal Processing Research Group, 2014. Imperial College Communications And Signal Processing Research Group. Web. 29 Feb. 2016.
+
+
 The camera identification script may be used in two modes. In 'Reference' mode, a PRNU signature pattern is extracted either from a set of flat-field images or from individual image files. In 'correlate' mode, signature patterns from individual images are correlated with a reference PRNU pattern to determine whether the query image was taken with the same camera that generated the reference PRNU pattern.
 
-USAGE:
+##### USAGE:
 
 1. To use the code, first create a set of flat-field images for your camera. This can be done by first creating a white diffuse light source. This can be done by placing a frosted (matt) Perspex panel in front of an LCD monitor and setting the monitor to display an all white background with maximum or near maximum brightness. Position the camera very close to the perspex panel capture and, if possible, set focus to infinity, and lens focal length to the equivalent to 50mm in 35mm terms. If it is possible, set custom white balance based on the captured white perspex panel. Capture between 50 and 100 images.
 
