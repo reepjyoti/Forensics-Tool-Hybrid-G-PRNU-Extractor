@@ -99,4 +99,4 @@ Create a new file in Notepad++ and copy the name of the reference PRNU frame fil
 
 Now copy the list of noise residual file names from the file listing, but this time do it in block edit mode. Delete the name of the reference PRNU file and any other files from the file listing. Then copy in block mode the noise residual file names. This is done by pressing ALT+SHFT+Cursor keys (or ALT+SHFT+ Mouse select) when selecting the noise residual file names. Copy the file names to the clipboard by pressing CTRL+C. Move to the panel containing the new file and position the cursor to the right of the first entry and press CTRL+V. This will copy the noise residual names in block edit mode.
 
-Finally, save the newly created file to disk. Call it something like correlation-listing.txt.
+Finally, save the newly created file containing the correlation listing to disk.
